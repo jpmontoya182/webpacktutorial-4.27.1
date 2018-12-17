@@ -1,4 +1,4 @@
-import printMe from './print'
+import printMe from './print.js'
 
 function component(){
     let element = document.createElement('div');
@@ -17,7 +17,7 @@ document.body.appendChild(component());
 
 if(module.hot){
     module.hot.accept('./print.js', function(){
-        console.log('Accepting the update printMe module!')
+        console.log('Accepting the update printMe module! ')
         printMe()
     })
 }

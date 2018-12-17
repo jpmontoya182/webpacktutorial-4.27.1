@@ -1,0 +1,11 @@
+@font-face {
+    font-family: 'Major Mono Display';
+    src:  url('./MajorMonoDisplay-Regular.ttf') format('ttf');
+    font-weight: 400;
+    font-style: normal;
+}
+
+.hello {
+    color: red;
+    font-family: 'Major Mono Display', monospace;
+}

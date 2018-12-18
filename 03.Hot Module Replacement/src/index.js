@@ -1,8 +1,9 @@
 import printMe from './print.js'
+import './styles.css'
 
 function component(){
-    let element = document.createElement('div');
-    let btn = document.createElement('button')
+    var element = document.createElement('div');
+    var btn = document.createElement('button')
 
     element.innerHTML = 'Hello Webpack <br>';   
     btn.innerHTML = 'Click me and check the console'
@@ -13,11 +14,17 @@ function component(){
     return element
 }
 
-document.body.appendChild(component());
+let element = component()
+document.body.appendChild(element)
+
 
 if(module.hot){
     module.hot.accept('./print.js', function(){
         console.log('Accepting the update printMe module! ')
-        printMe()
+        
+        document.body.removeChild(element)
+        element = component()
+        document.body.appendChild(element)
+
     })
 }

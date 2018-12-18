@@ -15,6 +15,14 @@ module.exports = {
     }, 
     // this option can track the error in the different bundles that you have
     devtool: 'inline-source-map',
+    module :{
+        rules : [
+            {
+                test : /\.css$/,
+                use : ['style-loader', 'css-loader']
+            }
+        ]
+    },
     devServer: {
         contentBase: './dist', 
         hot: true
